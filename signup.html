@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <h2>Create Account</h2>
+    <form action="" class="sign">
+        <input type="text" class="Name" placeholder="Full Name" required><br><br>
+        <input type="email" class="email" placeholder="abc@gmail.com" required><br><br>
+        <button onclick="window.location.href='signup.html'" class="signup">
+    Sign Up
+</button>
+    </form>
+    <script>
+    document.getElementById('signup').addEventListener('submit',function(event){
+    event.presentDefault();
+    window.location.href ="perfume.html";
+})
+const username = document.getElementsByClassName('username').value;
+const password = document.getElementsByClassName('password').value;
+if(!username || !password){
+    alert('Incorrect Username');
+    return;
+}
+if(password.length<8){
+    alert('Please uses at least 8 characterrs long.');
+    return;
+}
+
+</script>
+
+</body>
+</html>
