@@ -11,7 +11,6 @@ header {
     background-color: aliceblue;
 }
 
-
 .logo {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: large;
@@ -40,19 +39,53 @@ nav a:hover {
     color: aqua;
 }
 
-.signup {
+.login {
     text-decoration: none;
     background: black;
     color: white;
     padding: 8px 18px;
     border-radius: 6px;
     transition: 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
-.signup:hover {
+.login:hover {
     color: black;
     background-color: rgb(255, 254, 254);
     outline: 1px solid black;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: #333;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+    color: #4CAF50; /* Matches your theme */
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-family: Arial, sans-serif;
 }
 
 .smell {
@@ -161,7 +194,7 @@ button:hover {
     width: 90%;
     height: 250px;
     object-fit: cover;
-    border-radius: 10Px;
+    border-radius: 10px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
@@ -207,7 +240,7 @@ button:hover {
     margin: 30px auto;
 }
 
-.large .medium .small {
+.large, .medium, .small {
     width: 150px;
     height: 100px;
     padding: 10px 20px;
@@ -229,12 +262,200 @@ button:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.footer {
-    background-color: #605d5d;
+footer {
+    background-color: #2e2a2a;
     color: white;
+    padding: 60px 10%; 
+    font-family: 'Playfair Display', serif; 
+}
+
+.footer {
     display: flex;
     justify-content: space-between;
-    padding-left: 40px;
-    padding-right: 40px;
-    margin: auto;
+    flex-wrap: wrap; 
+    gap: 40px;
 }
+
+.footer .p, .footer .Q, .footer .C {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer h5 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+}
+
+.footer a:hover {
+    color: #4CAF50; 
+    padding-left: 5px;
+}
+
+.footer .C ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer .C i {
+    font-size: 22px;
+    color: white;
+}
+
+footer > p {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+/* --- Modal CSS Additions --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    justify-content: center; 
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+    color: black;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.modal-content input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-btn {
+    width: 95%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.modal-content p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.modal-content a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Hidden off-screen */
+    width: 350px;
+    height: 100%;
+    background: white;
+    z-index: 3000;
+    transition: 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+}
+
+/* Sidebar Visible State */
+.cart-sidebar.active {
+    right: 0 !important;
+}
+
+/* Background Dimmer */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 2500;
+}
+
+.overlay.active {
+    display: block !important;
+}
+
+/* Cart UI Components */
+.cart-header { padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+.cart-body { flex: 1; padding: 20px; overflow-y: auto; }
+.cart-footer { padding: 20px; border-top: 1px solid #eee; }
+.close-cart { cursor: pointer; font-size: 24px; font-weight: bold; }
+.checkout-btn { width: 100%; padding: 15px; background: #2d3a2e; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+

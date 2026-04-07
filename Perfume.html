@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,24 +8,27 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="tech.css">
-    <script type="text/JavaScript" src="js/perfume.js" defer></script>
+    <script src="perfume.js" defer></script>
 </head>
 
 <body>
-    <!-- header part -->
     <header>
         <div class="logo">Perfume</div>
         <nav>
-            <a href="tech.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </nav>
-        <a href="http://127.0.0.1:5500/signup.html" class="signup">Sign Up</a>
-
+        <div class="header-actions">
+            <div class="cart-icon" onclick="showCart()">
+                <i class="ri-shopping-cart-2-line"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <button id="openLogin" class="login">Login</button>
+        </div>
     </header>
 
     <main>
-        <!-- Smell section -->
         <section class="smell">
             <div class="smell-content">
                 <div class="overlay-text">
@@ -38,129 +40,167 @@
             </div>
         </section>
 
-        <!-- Features section -->
         <section class="feature">
             <h1>Features</h1>
-
             <div class="column">
                 <div class="feature-item">
                     <h5>Prada</h5>
-                    <img src="prada paradoxe (1).jpg" alt="">
+                    <img src="prada paradoxe (1).jpg" alt="Prada">
                     <p>A luxurious fragrance <br> that embodies elegance <br>and sophistication.</p>
                     <div class="price-container">
                         <p>ETB 15,000</p>
-                        <button onclick="addtocart('Prada')" class="btn">Add </button>
+                        <button onclick="addtocart('Prada', 15000)" class="btn">Add </button>
                     </div>
                 </div>
 
                 <div class="feature-item">
                     <h5>Chanel</h5>
-                    <img src="download.jpg" alt="">
+                    <img src="download.jpg" alt="Chanel">
                     <p>A timeless scent that <br> exudes confidence and <br> grace.</p>
                     <div class="price-container">
                         <p>ETB 20,000</p>
-                        <button onclick="addtocart('Chanel')" class="btn">Add </button>
+                        <button onclick="addtocart('Chanel', 20000)" class="btn">Add </button>
                     </div>
                 </div>
 
                 <div class="feature-item">
                     <h5>Gucci</h5>
-                    <img src="Gucci Bloom Perfume for Women 3_4oz _ Floral Luxury Fragrance Aesthetic.jpg" alt="">
+                    <img src="Gucci Bloom Perfume for Women 3_4oz _ Floral Luxury Fragrance Aesthetic.jpg" alt="Gucci">
                     <p>A bold and captivating <br>fragrance that leaves <br>a lasting impression.</p>
                     <div class="price-container">
                         <p>ETB 18,000</p>
-                        <button onclick="addtocart('Gucci')" class="btn">Add </button>
+                        <button onclick="addtocart('Gucci', 18000)" class="btn">Add </button>
                     </div>
                 </div>
 
                 <div class="feature-item">
                     <h5>Dior</h5>
-                    <img src="✨ Dior J'adore Eau de Parfum – Elegance in a Bottle ✨.jpg" alt="">
+                    <img src="✨ Dior J'adore Eau de Parfum – Elegance in a Bottle ✨.jpg" alt="Dior">
                     <p>A sophisticated scent <br> that combines elegance with a modern twist.</p>
                     <div class="price-container">
-
                         <p>ETB 22,000</p>
-                        <button onclick="addtocart('Dior')" class="btn">Add </button>
+                        <button onclick="addtocart('Dior', 22000)" class="btn">Add </button>
                     </div>
                 </div>
 
                 <div class="feature-item">
                     <h5>Versace</h5>
-                    <img src="Versace Crystal Noir – The Essence of Seductive Luxury.jpg" alt="">
+                    <img src="Versace Crystal Noir – The Essence of Seductive Luxury.jpg" alt="Versace">
                     <p>A vibrant and energetic fragrance that captures the essence of luxury.</p>
                     <div class="price-container">
                         <p>ETB 19,000</p>
-                        <button onclick="addtocart('Versace')" class="btn">Add </button>
+                        <button onclick="addtocart('Versace', 19000)" class="btn">Add </button>
                     </div>
                 </div>
 
                 <div class="feature-item">
                     <h5>Yves Saint Laurent</h5>
-                    <img src="The perfume that turns every moment into luxury ✨💛.jpg" alt="">
+                    <img src="The perfume that turns every moment into luxury ✨💛.jpg" alt="YSL">
                     <p>A seductive and alluring scent that embodies the spirit of Parisian chic.</p>
                     <div class="price-container">
                         <p>ETB 21,000</p>
-                        <button onclick="addtocart('Yves Saint Laurent')" class="btn">Add </button>
+                        <button onclick="addtocart('Yves Saint Laurent', 21000)" class="btn">Add </button>
                     </div>
                 </div>
             </div>
-
         </section>
+
+        <section class="ml">
+            <div class="large">
+                <h4>Large</h4>
+                <p>1000ml</p>
+            </div>
+            <div class="medium">
+                <h4>Medium</h4>
+                <p>500ml</p>
+            </div>
+            <div class="small">
+                <h4>Small</h4>
+                <p>100ml</p>
+            </div>
+        </section>
+
+        <footer>
+            <section class="footer">
+                <div class="p">
+                    <h5>Perfume</h5>
+                    <p>A masterfully balanced blend of rare botanicals and <br> deep base notes designed to linger on
+                        the skin.</p>
+                </div>
+
+                <div class="Q">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="home">Home</a></li>
+                        <li><a href="about">About</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="signup">Shop All</a></li>
+                    </ul>
+                </div>
+
+                <div class="C">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li>navawitnigussie@gmail.com</li>
+                        <li><a href="https://t.me/Designer_nava" target="_blank" aria-label="Telegram"><i
+                                    class="ri-telegram-line"></i></a></li>
+                        <li><a href="https://www.instagram.com/designer_nava" target="_blank" aria-label="Instagram"><i
+                                    class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </section>
+            <p>&copy; 2026 Perfume Collection. All rights reserved.</p>
+        </footer>
+
+        <div id="authModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div id="loginBox">
+                    <h2>Login</h2>
+                    <form id="loginForm">
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit" class="modal-btn">Login</button>
+                    </form>
+                    <p>Don't have an account? <a href="#" id="showSignUp">Create Account</a></p>
+                </div>
+
+                <div id="signupBox" style="display: none;">
+                    <h2>Sign Up</h2>
+                    <form id="signupForm">
+                        <input type="text" placeholder="First Name" required>
+                        <input type="text" placeholder="Last Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="Password" required>
+                        <input type="password" placeholder="Confirm Password" required>
+                        <button type="submit" class="modal-btn">Sign Up</button>
+                    </form>
+                    <p>Already have an account? <a href="#" id="showSignIn">Sign In</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="cartDrawer" class="cart-sidebar">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <span class="close-cart" onclick="closecart()">&times;</span>
+            </div>
+            <div class="cart-body">
+                <p id="empty-msg">Your cart is empty.</p>
+                <ul id="cart-items-list"></ul>
+            </div>
+            <div class="cart-footer">
+                <div class="subtotal">
+                    <span>Subtotal</span>
+                    <span id="total-price">ETB 0.00</span>
+                </div>
+                <p>Shipping & taxes calculated at checkout.</p>
+                <button class="checkout-btn">Proceed to Buy</button>
+            </div>
+        </div>
+
+        <div id="cartOverlay" class="overlay" onclick="closecart()"></div>
     </main>
-
-    <!-- Sizes section -->
-    <section class="ml">
-        <div class="large">
-            <h4>Large</h4>
-            <p>1000ml</p>
-        </div>
-        <div class="medium">
-            <h4>Medium</h4>
-            <p>500ml</p>
-        </div>
-        <div class="small">
-            <h4>Small</h4>
-            <p>100ml</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <section class="footer">
-            <div class="p">
-                <h5>Perfume</h5>
-                <p>A masterfully balanced blend of rare botanicals and <br> deep base notes designed to linger on the skin. 
-       </p>
-            </div>
-
-            <div class="Q">
-                <h5>Quick Links</h5>
-                <ul>
-                    <li><a href="home">Home</a></li>
-                    <li><a href="about">About</a></li>
-                    <li><a href="contact">Contact</a></li>
-                    <li><a href="signup">Shop All</a></li>
-                </ul>
-
-            </div>
-
-            <div class="C">
-                <h5>Contact</h5>
-                <ul>
-                    <li>navawitnigussie@gmail.com</li>
-                    <li><a href="https://t.me/Designer_nava" target="_blank" aria-label="Telegram">
-                            <i class="ri-telegram-line"></i>
-                        </a></li>
-                    <li> <a href="https://www.instagram.com/designer_nava" target="_blank" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a></li>
-
-                </ul>
-
-            </div>
-        </section>
-        <p>&copy; 2026 Perfume Collection. All rights reserved.</p>
-    </footer>
 </body>
 
 </html>
